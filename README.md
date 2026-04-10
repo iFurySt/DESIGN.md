@@ -44,6 +44,23 @@ It's just a markdown file. No Figma exports, no JSON schemas, no special tooling
 
 This fork is maintained by [iFurySt](https://github.com/iFurySt/DESIGN.md). Upstream design content remains available via [getdesign.md](https://getdesign.md/).
 
+## Create New Files
+
+This fork encourages new `DESIGN.md` contributions.
+
+Use the repo skill:
+
+```text
+Use $design-md-creator to analyze https://example.com and create a new DESIGN.md.
+```
+
+The skill lives in [skills/design-md-creator/SKILL.md](/Users/ifuryst/projects/github/awesome-design-md/skills/design-md-creator/SKILL.md) and is designed to help AI agents turn a public website URL into:
+
+- `design-md/<slug>/DESIGN.md`
+- `design-md/<slug>/preview.html`
+- `design-md/<slug>/preview-dark.html`
+- `design-md/<slug>/README.md`
+
 ## Collection
 
 ### AI & LLM Platforms
@@ -171,10 +188,10 @@ Each site includes:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
+- **Create new files**: We welcome new `DESIGN.md` submissions and improvements
 - **Improve existing files**: Fix wrong colors, missing tokens, weak descriptions
 - **Report issues**: Let us know if something looks off
-
-Before opening a PR, please [open an issue](https://github.com/iFurySt/DESIGN.md/issues) first to discuss your idea and get feedback from maintainers.
+- **Open a PR**: New design extractions and corrections are encouraged
 
 
 ## License

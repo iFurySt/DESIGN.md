@@ -1,0 +1,4 @@
+interface:
+  display_name: "DESIGN.md Creator"
+  short_description: "Create DESIGN.md from a website URL"
+  default_prompt: "Use $design-md-creator to analyze a website and create a DESIGN.md from its public UI."
