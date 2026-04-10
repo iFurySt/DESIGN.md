@@ -1,5 +1,5 @@
 <a href="https://github.com/iFurySt/DESIGN.md">
-     <img width="1500" height="801" alt="claude-skills" src="https://github.com/user-attachments/assets/d012a0d2-cec3-4630-ba5e-acc339dbe6cf" />
+     <img width="1500" height="801" alt="DESIGN.md" src="https://github.com/user-attachments/assets/b223822b-fc76-4574-9dc1-0d31078d1267" />
 </a>
 
 
