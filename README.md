@@ -7,6 +7,12 @@
 <br/>
 
 <div align="center">
+
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+</div>
+
+<div align="center">
     <strong>Curated collection of DESIGN.md files inspired by developer focused websites.</strong>
     <br />
     <br />
@@ -22,31 +28,25 @@
 </div>
 </div>
 
-# Awesome DESIGN.md
+# DESIGN.md
 
-Copy a DESIGN.md into your project, tell your AI agent "build me a page that looks like this" and get pixel-perfect UI that actually matches.
+Reusable `DESIGN.md` files extracted from real websites for AI coding and design agents.
 
+Copy a site's `DESIGN.md` into your project, tell your agent to follow it, and generate UI that stays visually consistent.
 
-## What is DESIGN.md?
+## What It Is
 
-[DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview/) is a new concept introduced by Google Stitch. A plain-text design system document that AI agents read to generate consistent UI.
+[DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview/) is a plain-text design system format for AI agents.
 
-It's just a markdown file. No Figma exports, no JSON schemas, no special tooling. Drop it into your project root and any AI coding agent or Google Stitch instantly understands how your UI should look. Markdown is the format LLMs read best, so there's nothing to parse or configure.
+This repo collects:
 
-| File | Who reads it | What it defines |
-|------|-------------|-----------------|
-| `AGENTS.md` | Coding agents | How to build the project |
-| `DESIGN.md` | Design agents | How the project should look and feel |
+- `DESIGN.md`
+- `preview.html`
+- `preview-dark.html`
 
-**This repo provides ready-to-use DESIGN.md files** extracted from real websites. 
-
-## Fork Notes
-
-This fork is maintained by [iFurySt](https://github.com/iFurySt/DESIGN.md). Upstream design content remains available via [getdesign.md](https://getdesign.md/).
+This fork is maintained by [iFurySt](https://github.com/iFurySt/DESIGN.md). Upstream public design pages remain available on [getdesign.md](https://getdesign.md/).
 
 ## Create New Files
-
-This fork encourages new `DESIGN.md` contributions.
 
 Use the repo skill:
 
@@ -153,35 +153,11 @@ The skill lives in [skills/design-md-creator/SKILL.md](/Users/ifuryst/projects/g
 - [**Tesla**](https://getdesign.md/tesla/design-md) - Electric vehicles. Radical subtraction, cinematic full-viewport photography, Universal Sans
 
 
-## What's Inside Each DESIGN.md
+## How to Use
 
-Every file follows the [Stitch DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/) with extended sections:
-
-| # | Section | What it captures |
-|---|---------|-----------------|
-| 1 | Visual Theme & Atmosphere | Mood, density, design philosophy |
-| 2 | Color Palette & Roles | Semantic name + hex + functional role |
-| 3 | Typography Rules | Font families, full hierarchy table |
-| 4 | Component Stylings | Buttons, cards, inputs, navigation with states |
-| 5 | Layout Principles | Spacing scale, grid, whitespace philosophy |
-| 6 | Depth & Elevation | Shadow system, surface hierarchy |
-| 7 | Do's and Don'ts | Design guardrails and anti-patterns |
-| 8 | Responsive Behavior | Breakpoints, touch targets, collapsing strategy |
-| 9 | Agent Prompt Guide | Quick color reference, ready-to-use prompts |
-
-Each site includes:
-
-| File | Purpose |
-|------|---------|
-| `DESIGN.md` | The design system (what agents read) |
-| `preview.html` | Visual catalog showing color swatches, type scale, buttons, cards |
-| `preview-dark.html` | Same catalog with dark surfaces |
-
-### How to Use
-
-
-1. Copy a site's `DESIGN.md` into your project root
-2. Tell your AI agent to use it.
+1. Pick a site from the collection
+2. Copy its `DESIGN.md` into your project root
+3. Tell your AI agent to use that file as the visual system
 
 
 ## Contributing
