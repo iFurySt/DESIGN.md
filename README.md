@@ -1,4 +1,4 @@
-<a href="https://github.com/VoltAgent/voltagent">
+<a href="https://github.com/iFurySt/DESIGN.md">
      <img width="1500" height="801" alt="claude-skills" src="https://github.com/user-attachments/assets/d012a0d2-cec3-4630-ba5e-acc339dbe6cf" />
 </a>
 
@@ -17,8 +17,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![DESIGN.md Count](https://img.shields.io/badge/DESIGN.md%20count-62-10b981?style=classic)
-[![Last Update](https://img.shields.io/github/last-commit/VoltAgent/awesome-design-md?label=Last%20update&style=classic)](https://github.com/VoltAgent/awesome-design-md)
-[![Discord](https://img.shields.io/discord/1361559153780195478.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://s.voltagent.dev/discord)
+[![Last Update](https://img.shields.io/github/last-commit/iFurySt/DESIGN.md?label=Last%20update&style=classic)](https://github.com/iFurySt/DESIGN.md)
 
 </div>
 </div>
@@ -41,13 +40,9 @@ It's just a markdown file. No Figma exports, no JSON schemas, no special tooling
 
 **This repo provides ready-to-use DESIGN.md files** extracted from real websites. 
 
-## Request a DESIGN.md
+## Fork Notes
 
-You can [request a DESIGN.md](https://getdesign.md/request) for specific website, including private requests delivered exclusively to you.
-
-## Sponsors ❤️
-
-[Become a Sponsor](https://github.com/sponsors/VoltAgent/sponsorships?tier_id=605140) [1M+ view] — your logo here and get listed on [getdesign.md](https://getdesign.md/)
+This fork is maintained by [iFurySt](https://github.com/iFurySt/DESIGN.md). Upstream design content remains available via [getdesign.md](https://getdesign.md/).
 
 ## Collection
 
@@ -179,7 +174,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 - **Improve existing files**: Fix wrong colors, missing tokens, weak descriptions
 - **Report issues**: Let us know if something looks off
 
-Before opening a PR, please [open an issue](https://github.com/VoltAgent/awesome-design-md/issues) first to discuss your idea and get feedback from maintainers.
+Before opening a PR, please [open an issue](https://github.com/iFurySt/DESIGN.md/issues) first to discuss your idea and get feedback from maintainers.
 
 
 ## License
