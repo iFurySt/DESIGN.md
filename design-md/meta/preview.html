@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Inspired by Meta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --meta-blue: #0064E0;
+    --meta-blue-hover: #0143B5;
+    --meta-blue-pressed: #004BB9;
+    --meta-blue-light: #47A5FA;
+    --facebook-blue: #1877F2;
+    --ray-ban-red: #D6311F;
+    --oculus-purple: #A121CE;
+    --work-purple: #6441D2;
+    --portal-blue: #1B365D;
+    --portal-hero-blue: #C8E4E8;
+    --portal-light-blue: #ADD4E0;
+    --white: #FFFFFF;
+    --soft-gray: #F1F4F7;
+    --warm-gray: #F7F8FA;
+    --web-wash: #F0F2F5;
+    --linen: #F2F0E6;
+    --baby-blue: #E8F3FF;
+    --near-black: #1C1E21;
+    --oculus-light: #181A1B;
+    --primary-text: #050505;
+    --dark-charcoal: #1C2B33;
+    --icon-secondary: #465A69;
+    --secondary-text: #65676B;
+    --slate-gray: #5D6C7B;
+    --section-header: #4B4C4F;
+    --button-text-gray: #444950;
+    --disabled-text: #BCC0C4;
+    --cta-disabled-text: #8595A4;
+    --divider: #CED0D4;
+    --divider-gray: #DEE3E9;
+    --cta-gray-border: #CBD2D9;
+    --dark-gray-border: #909396;
+    --success-green: #31A24C;
+    --store-success: #007D1E;
+    --error-red: #E41E3F;
+    --store-error: #C80A28;
+    --warning-amber: #F7B928;
+    --cherry: #F3425F;
+    --grape: #9360F7;
+    --lime: #45BD62;
+    --seafoam: #54C7EC;
+    --teal: #2ABBA7;
+    --tomato: #FB724B;
+    --pink: #FF66BF;
+    --cta-disabled: #DEE3E9;
+    --font-primary: 'Montserrat', Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    background: var(--white);
+    color: var(--primary-text);
+    line-height: 1.44;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(241,244,247,0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 56px;
+  }
+  .nav-brand { font-weight: 500; font-size: 16px; color: var(--dark-charcoal); letter-spacing: -0.16px; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--dark-charcoal); font-size: 14px; font-weight: 500; }
+  .nav-links a:hover { text-decoration: underline; }
+  .nav-cta {
+    background: var(--meta-blue); color: var(--white); border: none; border-radius: 100px;
+    padding: 8px 20px; font-size: 14px; font-weight: 400; font-family: var(--font-primary);
+    cursor: pointer; letter-spacing: -0.14px;
+    transition: background 200ms ease, transform 150ms ease;
+  }
+  .nav-cta:hover { background: var(--meta-blue-hover); transform: scale(1.05); }
+
+  /* HERO */
+  .hero {
+    background: var(--near-black);
+    padding: 80px 40px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,100,224,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: 64px; font-weight: 500; line-height: 1.16;
+    color: var(--white); margin-bottom: 16px;
+    position: relative;
+  }
+  .hero p {
+    font-size: 18px; font-weight: 400; line-height: 1.44;
+    color: var(--slate-gray); margin-bottom: 32px;
+    position: relative;
+  }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .btn-primary {
+    background: var(--meta-blue); color: var(--white); border: none; border-radius: 100px;
+    padding: 10px 22px; font-size: 14px; font-weight: 400; font-family: var(--font-primary);
+    cursor: pointer; letter-spacing: -0.14px;
+    transition: background 200ms ease, transform 150ms ease;
+  }
+  .btn-primary:hover { background: var(--meta-blue-hover); transform: scale(1.1); }
+  .btn-secondary {
+    background: transparent; color: rgba(255,255,255,0.5); border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 100px; padding: 10px 22px; font-size: 14px; font-weight: 400;
+    font-family: var(--font-primary); cursor: pointer; letter-spacing: -0.14px;
+    transition: background 200ms ease, transform 150ms ease;
+  }
+  .btn-secondary:hover { background: rgba(70,90,105,0.7); color: var(--white); }
+
+  /* SECTIONS */
+  .section { padding: 64px 40px; }
+  .section-title {
+    font-size: 36px; font-weight: 500; line-height: 1.28;
+    color: var(--dark-charcoal); margin-bottom: 12px;
+  }
+  .section-subtitle {
+    font-size: 18px; color: var(--slate-gray); margin-bottom: 40px;
+  }
+  .section-alt { background: var(--soft-gray); }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* COLOR PALETTE */
+  .color-group { margin-bottom: 32px; }
+  .color-group-title { font-size: 18px; font-weight: 700; color: var(--dark-charcoal); margin-bottom: 16px; }
+  .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+  .color-swatch .swatch-box {
+    width: 100%; height: 80px; border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .color-swatch .swatch-name { font-size: 14px; font-weight: 700; color: var(--dark-charcoal); margin-top: 8px; }
+  .color-swatch .swatch-hex { font-size: 12px; color: var(--secondary-text); font-family: monospace; }
+  .color-swatch .swatch-role { font-size: 12px; color: var(--slate-gray); margin-top: 2px; }
+
+  /* TYPOGRAPHY */
+  .type-sample { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--divider-gray); }
+  .type-sample:last-child { border-bottom: none; }
+  .type-label { font-size: 12px; color: var(--secondary-text); margin-top: 8px; font-family: monospace; }
+
+  /* BUTTONS */
+  .button-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .button-label { font-size: 12px; color: var(--secondary-text); margin-top: 8px; text-align: center; }
+  .button-item { display: flex; flex-direction: column; align-items: center; }
+  .btn-ghost {
+    background: transparent; color: #385898; border: none; border-radius: 24px;
+    padding: 4px 12px; font-size: 14px; font-family: var(--font-primary); cursor: pointer;
+  }
+  .btn-ghost:hover { text-decoration: underline; }
+  .btn-disabled {
+    background: var(--cta-disabled); color: var(--cta-disabled-text); border: none;
+    border-radius: 100px; padding: 10px 22px; font-size: 14px;
+    font-family: var(--font-primary); cursor: not-allowed;
+  }
+  .btn-secondary-light {
+    background: transparent; color: rgba(28,43,51,0.5); border: 2px solid rgba(10,19,23,0.12);
+    border-radius: 100px; padding: 10px 22px; font-size: 14px;
+    font-family: var(--font-primary); cursor: pointer;
+    transition: background 200ms ease;
+  }
+  .btn-secondary-light:hover { background: rgba(70,90,105,0.7); color: var(--white); }
+
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+  .card {
+    background: var(--white); border-radius: 20px;
+    padding: 20px; border: 1px solid var(--divider-gray);
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.1); }
+  .card-flat { background: var(--warm-gray); border: none; }
+  .card-elevated { box-shadow: 0 12px 28px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.1); border: none; }
+  .card-image {
+    width: 100%; height: 160px; border-radius: 12px; margin-bottom: 16px;
+    object-fit: cover;
+  }
+  .card h3 { font-size: 18px; font-weight: 700; color: var(--dark-charcoal); margin-bottom: 8px; }
+  .card p { font-size: 14px; color: var(--slate-gray); line-height: 1.43; }
+
+  /* FORMS */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 700px; }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group.full-width { grid-column: 1 / -1; }
+  .form-label { font-size: 14px; font-weight: 700; color: var(--dark-charcoal); margin-bottom: 6px; }
+  .form-input {
+    background: var(--white); border: 1px solid var(--divider);
+    border-radius: 8px; padding: 10px 14px; font-size: 16px;
+    font-family: var(--font-primary); color: var(--primary-text);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+    outline: none;
+  }
+  .form-input::placeholder { color: var(--secondary-text); }
+  .form-input:focus {
+    border-color: hsl(214, 89%, 52%);
+    box-shadow: 0 0 0 3px rgba(24,119,242,0.15);
+  }
+  .form-input.error {
+    border-color: hsl(350, 87%, 55%);
+    box-shadow: 0 0 0 3px rgba(228,30,63,0.1);
+  }
+  .error-text { font-size: 12px; color: hsl(350, 87%, 55%); margin-top: 4px; }
+  textarea.form-input { min-height: 100px; resize: vertical; }
+
+  /* SPACING */
+  .spacing-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+  .spacing-box {
+    background: var(--meta-blue); border-radius: 8px; min-width: 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .spacing-label { font-size: 11px; color: var(--white); font-weight: 500; padding: 4px; white-space: nowrap; }
+  .spacing-value { font-size: 11px; color: var(--secondary-text); text-align: center; margin-top: 4px; }
+
+  /* RADIUS */
+  .radius-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+  .radius-item { text-align: center; }
+  .radius-box {
+    width: 80px; height: 80px; background: var(--meta-blue);
+  }
+  .radius-label { font-size: 12px; color: var(--secondary-text); margin-top: 8px; }
+  .radius-context { font-size: 11px; color: var(--slate-gray); }
+
+  /* ELEVATION */
+  .elevation-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+  .elevation-card {
+    background: var(--white); border-radius: 20px; padding: 24px;
+    min-height: 120px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .elevation-card h4 { font-size: 14px; font-weight: 700; color: var(--dark-charcoal); margin-bottom: 4px; }
+  .elevation-card p { font-size: 12px; color: var(--slate-gray); }
+  .elev-flat { border: 1px solid var(--divider-gray); }
+  .elev-1 { box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1); }
+  .elev-2 { box-shadow: 0 12px 28px 0 rgba(0,0,0,0.2), 0 2px 4px 0 rgba(0,0,0,0.1); }
+  .elev-overlay { background: rgba(0,0,0,0.6); color: var(--white); }
+  .elev-overlay h4, .elev-overlay p { color: var(--white); }
+  .elev-inset { box-shadow: inset 0 0 12px rgba(255,255,255,0.5); background: var(--soft-gray); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; padding: 32px 40px;
+    font-size: 12px; color: var(--secondary-text);
+    border-top: 1px solid var(--divider-gray);
+  }
+  .footer a { color: var(--meta-blue); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 16px; height: 48px; }
+    .nav-links { display: none; }
+    .hero { padding: 48px 16px 40px; }
+    .hero h1 { font-size: 36px; line-height: 1.28; }
+    .section { padding: 48px 16px; }
+    .section-title { font-size: 28px; }
+    .color-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+    .form-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+    .elevation-grid { grid-template-columns: 1fr; }
+  }
+
+  /* getdesign.md nav additions */
+  .nav-left { display: flex; align-items: center; gap: 20px; }
+  .nav-brand-link,
+  .nav-brand-link:link,
+  .nav-brand-link:visited,
+  .nav-brand-link:hover,
+  .nav-brand-link:active { text-decoration: none; color: inherit; }
+  .nav-github,
+  .nav-github:link,
+  .nav-github:visited,
+  .nav-github:hover,
+  .nav-github:active {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 6px;
+    opacity: 0.75;
+    transition: opacity 200ms ease, border-color 200ms ease;
+    font-family: inherit;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .nav-github:hover { opacity: 1; border-color: rgba(128, 128, 128, 0.55); }
+  .nav-github svg { display: block; flex-shrink: 0; }
+
+  /* getdesign.md nav centering */
+  .nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .nav > .nav-left { justify-self: start; }
+  .nav > .nav-links { justify-self: center; }
+  .nav > :last-child { justify-self: end; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="https://getdesign.md/" target="_blank" rel="noopener noreferrer" class="nav-brand-link">
+      <span class="nav-brand">getdesign.md</span>
+    </a>
+    <a class="nav-github" href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener noreferrer" aria-label="awesome-design-md on GitHub">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      awesome-design-md
+    </a>
+  </div>
+  <div class="nav-links">
+    <a href="#colors">Colors</a>
+    <a href="#typography">Typography</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#cards">Cards</a>
+    
+  </div>
+  <button class="nav-cta">Get Started</button>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Design System Inspired by Meta</h1>
+  <p>A visual token catalog generated from DESIGN.md — every color, type scale, and component in one page.</p>
+  <div class="hero-buttons">
+    <button class="btn-primary">Explore Tokens</button>
+    <button class="btn-secondary">View Source</button>
+  </div>
+</section>
+
+<!-- 1. COLOR PALETTE -->
+<section class="section" id="colors">
+  <div class="container">
+    <h2 class="section-title">Color Palette</h2>
+    <p class="section-subtitle">Every color from the Meta Store design system with semantic roles.</p>
+
+    <div class="color-group">
+      <h3 class="color-group-title">Primary</h3>
+      <div class="color-grid">
+        <div class="color-swatch"><div class="swatch-box" style="background:#0064E0;"></div><div class="swatch-name">Meta Blue</div><div class="swatch-hex">#0064E0</div><div class="swatch-role">Primary CTA</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#0143B5;"></div><div class="swatch-name">Meta Blue Hover</div><div class="swatch-hex">#0143B5</div><div class="swatch-role">Hover state</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#004BB9;"></div><div class="swatch-name">Meta Blue Pressed</div><div class="swatch-hex">#004BB9</div><div class="swatch-role">Active state</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#47A5FA;"></div><div class="swatch-name">Meta Blue Light</div><div class="swatch-hex">#47A5FA</div><div class="swatch-role">CTA on dark bg</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#1877F2;"></div><div class="swatch-name">Facebook Blue</div><div class="swatch-hex">#1877F2</div><div class="swatch-role">Legacy accent</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <h3 class="color-group-title">Secondary & Accent</h3>
+      <div class="color-grid">
+        <div class="color-swatch"><div class="swatch-box" style="background:#D6311F;"></div><div class="swatch-name">Ray-Ban Red</div><div class="swatch-hex">#D6311F</div><div class="swatch-role">Ray-Ban sections</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#A121CE;"></div><div class="swatch-name">Oculus Purple</div><div class="swatch-hex">#A121CE</div><div class="swatch-role">Quest/VR accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#6441D2;"></div><div class="swatch-name">Work Purple</div><div class="swatch-hex">#6441D2</div><div class="swatch-role">Enterprise accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#1B365D;"></div><div class="swatch-name">Portal Blue</div><div class="swatch-hex">#1B365D</div><div class="swatch-role">Portal product</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#C8E4E8;"></div><div class="swatch-name">Portal Hero Blue</div><div class="swatch-hex">#C8E4E8</div><div class="swatch-role">Portal hero bg</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#ADD4E0;"></div><div class="swatch-name">Portal Light Blue</div><div class="swatch-hex">#ADD4E0</div><div class="swatch-role">Portal surface</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <h3 class="color-group-title">Surface & Background</h3>
+      <div class="color-grid">
+        <div class="color-swatch"><div class="swatch-box" style="background:#FFFFFF; border: 1px solid #DEE3E9;"></div><div class="swatch-name">White</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-role">Primary canvas</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#F1F4F7;"></div><div class="swatch-name">Soft Gray</div><div class="swatch-hex">#F1F4F7</div><div class="swatch-role">Secondary bg</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#F7F8FA;"></div><div class="swatch-name">Warm Gray</div><div class="swatch-hex">#F7F8FA</div><div class="swatch-role">Flat card bg</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#F0F2F5;"></div><div class="swatch-name">Web Wash</div><div class="swatch-hex">#F0F2F5</div><div class="swatch-role">Deemphasized bg</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#F2F0E6;"></div><div class="swatch-name">Linen</div><div class="swatch-hex">#F2F0E6</div><div class="swatch-role">Lifestyle sections</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#E8F3FF;"></div><div class="swatch-name">Baby Blue</div><div class="swatch-hex">#E8F3FF</div><div class="swatch-role">Highlight bg</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#1C1E21;"></div><div class="swatch-name">Near Black</div><div class="swatch-hex">#1C1E21</div><div class="swatch-role">Dark sections</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#181A1B;"></div><div class="swatch-name">Oculus Light</div><div class="swatch-hex">#181A1B</div><div class="swatch-role">Quest dark</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <h3 class="color-group-title">Neutrals & Text</h3>
+      <div class="color-grid">
+        <div class="color-swatch"><div class="swatch-box" style="background:#050505;"></div><div class="swatch-name">Primary Text</div><div class="swatch-hex">#050505</div><div class="swatch-role">Main body text</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#1C2B33;"></div><div class="swatch-name">Dark Charcoal</div><div class="swatch-hex">#1C2B33</div><div class="swatch-role">Dolly primary text</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#465A69;"></div><div class="swatch-name">Icon Secondary</div><div class="swatch-hex">#465A69</div><div class="swatch-role">Secondary icons</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#65676B;"></div><div class="swatch-name">Secondary Text</div><div class="swatch-hex">#65676B</div><div class="swatch-role">Labels, timestamps</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#5D6C7B;"></div><div class="swatch-name">Slate Gray</div><div class="swatch-hex">#5D6C7B</div><div class="swatch-role">Product descriptions</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#BCC0C4;"></div><div class="swatch-name">Disabled Text</div><div class="swatch-hex">#BCC0C4</div><div class="swatch-role">Inactive labels</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#CED0D4;"></div><div class="swatch-name">Divider</div><div class="swatch-hex">#CED0D4</div><div class="swatch-role">Content separators</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#DEE3E9;"></div><div class="swatch-name">Divider Gray</div><div class="swatch-hex">#DEE3E9</div><div class="swatch-role">Light dividers</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <h3 class="color-group-title">Semantic</h3>
+      <div class="color-grid">
+        <div class="color-swatch"><div class="swatch-box" style="background:#31A24C;"></div><div class="swatch-name">Success Green</div><div class="swatch-hex">#31A24C</div><div class="swatch-role">Positive indicator</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#007D1E;"></div><div class="swatch-name">Store Success</div><div class="swatch-hex">#007D1E</div><div class="swatch-role">Store confirmations</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#E41E3F;"></div><div class="swatch-name">Error Red</div><div class="swatch-hex">#E41E3F</div><div class="swatch-role">Critical badge</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#C80A28;"></div><div class="swatch-name">Store Error</div><div class="swatch-hex">#C80A28</div><div class="swatch-role">Store error states</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#F7B928;"></div><div class="swatch-name">Warning Amber</div><div class="swatch-hex">#F7B928</div><div class="swatch-role">Attention badge</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <h3 class="color-group-title">Base Spectrum (FDS)</h3>
+      <div class="color-grid">
+        <div class="color-swatch"><div class="swatch-box" style="background:#F3425F;"></div><div class="swatch-name">Cherry</div><div class="swatch-hex">#F3425F</div><div class="swatch-role">Expressive accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#9360F7;"></div><div class="swatch-name">Grape</div><div class="swatch-hex">#9360F7</div><div class="swatch-role">Purple accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#45BD62;"></div><div class="swatch-name">Lime</div><div class="swatch-hex">#45BD62</div><div class="swatch-role">Green accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#54C7EC;"></div><div class="swatch-name">Seafoam</div><div class="swatch-hex">#54C7EC</div><div class="swatch-role">Cyan accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#2ABBA7;"></div><div class="swatch-name">Teal</div><div class="swatch-hex">#2ABBA7</div><div class="swatch-role">Teal accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#FB724B;"></div><div class="swatch-name">Tomato</div><div class="swatch-hex">#FB724B</div><div class="swatch-role">Orange accent</div></div>
+        <div class="color-swatch"><div class="swatch-box" style="background:#FF66BF;"></div><div class="swatch-name">Pink</div><div class="swatch-hex">#FF66BF</div><div class="swatch-role">Pink accent</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TYPOGRAPHY -->
+<section class="section section-alt" id="typography">
+  <div class="container">
+    <h2 class="section-title">Typography Scale</h2>
+    <p class="section-subtitle">Optimistic VF hierarchy — Montserrat as Google Font substitute.</p>
+
+    <div class="type-sample">
+      <div style="font-size:64px;font-weight:500;line-height:1.16;color:var(--dark-charcoal);">Display 1</div>
+      <div class="type-label">Display 1 — 64px / 500 / 1.16 / — / Hero headlines</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:48px;font-weight:500;line-height:1.17;color:var(--dark-charcoal);">Display 2</div>
+      <div class="type-label">Display 2 — 48px / 500 / 1.17 / — / Section heroes</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:36px;font-weight:500;line-height:1.28;color:var(--dark-charcoal);">Heading 1</div>
+      <div class="type-label">Heading 1 — 36px / 500 / 1.28 / — / Major section headings</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:28px;font-weight:300;line-height:1.21;color:var(--dark-charcoal);">Heading 2</div>
+      <div class="type-label">Heading 2 — 28px / 300 / 1.21 / — / Subheadings, airy feel</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:18px;font-weight:700;line-height:1.44;color:var(--dark-charcoal);">Heading 3</div>
+      <div class="type-label">Heading 3 — 18px / 700 / 1.44 / — / Card titles, bold callouts</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:18px;font-weight:400;line-height:1.44;color:var(--primary-text);">Body text renders at 18px regular weight with comfortable line height.</div>
+      <div class="type-label">Body — 18px / 400 / 1.44 / — / Product descriptions</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:16px;font-weight:500;line-height:1.50;letter-spacing:-0.16px;color:var(--dark-charcoal);">Body Compact</div>
+      <div class="type-label">Body Compact — 16px / 500 / 1.50 / -0.16px / Nav links, UI labels</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:14px;font-weight:700;line-height:1.43;color:var(--dark-charcoal);">Caption Bold</div>
+      <div class="type-label">Caption Bold — 14px / 700 / 1.43 / — / Price text, emphasis</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:14px;font-weight:400;line-height:1.43;letter-spacing:-0.14px;color:var(--secondary-text);">Caption text for secondary labels and metadata</div>
+      <div class="type-label">Caption — 14px / 400 / 1.43 / -0.14px / Secondary labels</div>
+    </div>
+    <div class="type-sample">
+      <div style="font-size:12px;font-weight:400;line-height:1.33;color:var(--secondary-text);">Small text for footers, legal copy, and timestamps</div>
+      <div class="type-label">Small — 12px / 400 / 1.33 / — / Footer links, legal text</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BUTTONS -->
+<section class="section" id="buttons">
+  <div class="container">
+    <h2 class="section-title">Button Variants</h2>
+    <p class="section-subtitle">All pill-shaped — the Meta Store signature shape.</p>
+
+    <div class="button-row">
+      <div class="button-item">
+        <button class="btn-primary">Primary Button</button>
+        <div class="button-label">Meta Blue #0064E0<br>100px radius, 10px 22px</div>
+      </div>
+      <div class="button-item">
+        <button class="btn-secondary-light">Secondary Button</button>
+        <div class="button-label">Outlined pill<br>2px border rgba(10,19,23,0.12)</div>
+      </div>
+      <div class="button-item">
+        <button class="btn-ghost">Ghost Button</button>
+        <div class="button-label">Link Blue #385898<br>24px radius, 4px 12px</div>
+      </div>
+      <div class="button-item">
+        <button class="btn-disabled">Disabled Button</button>
+        <div class="button-label">BG #DEE3E9<br>Text #8595A4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CARDS -->
+<section class="section section-alt" id="cards">
+  <div class="container">
+    <h2 class="section-title">Card Examples</h2>
+    <p class="section-subtitle">20px rounded corners with flat and elevated variants.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-image" style="background: linear-gradient(135deg, var(--meta-blue), var(--meta-blue-light));"></div>
+        <h3>Default Card</h3>
+        <p>White background with subtle border. Lifts on hover with dual-shadow pattern — ambient + direct light.</p>
+      </div>
+      <div class="card card-flat">
+        <div class="card-image" style="background: linear-gradient(135deg, var(--oculus-purple), var(--grape));"></div>
+        <h3>Flat Card</h3>
+        <p>Warm Gray (#F7F8FA) background, no border. Surface differentiation through color only.</p>
+      </div>
+      <div class="card card-elevated">
+        <div class="card-image" style="background: linear-gradient(135deg, var(--near-black), var(--icon-secondary));"></div>
+        <h3>Elevated Card</h3>
+        <p>Pre-elevated with dual shadow: 12px/28px ambient + 2px/4px direct. No border needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. FORMS -->
+<section class="section" id="forms">
+  <div class="container">
+    <h2 class="section-title">Form Elements</h2>
+    <p class="section-subtitle">8px radius inputs with blue focus ring and red error states.</p>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Default Input</label>
+        <input class="form-input" type="text" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Focus State</label>
+        <input class="form-input" type="text" value="Focused input" style="border-color:hsl(214,89%,52%); box-shadow: 0 0 0 3px rgba(24,119,242,0.15);">
+      </div>
+      <div class="form-group">
+        <label class="form-label" style="color:hsl(350,87%,55%);">Error State</label>
+        <input class="form-input error" type="text" value="Invalid input">
+        <div class="error-text">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Input</label>
+        <input class="form-input" type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group full-width">
+        <label class="form-label">Textarea</label>
+        <textarea class="form-input" placeholder="Write your message..."></textarea>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. SPACING -->
+<section class="section section-alt" id="spacing">
+  <div class="container">
+    <h2 class="section-title">Spacing Scale</h2>
+    <p class="section-subtitle">8px base unit system from 1px to 80px.</p>
+
+    <div class="spacing-row">
+      <div><div class="spacing-box" style="width:4px;height:32px;"></div><div class="spacing-value">1px</div></div>
+      <div><div class="spacing-box" style="width:8px;height:32px;"></div><div class="spacing-value">4px</div></div>
+      <div><div class="spacing-box" style="width:16px;height:32px;"><span class="spacing-label">8</span></div><div class="spacing-value">8px</div></div>
+      <div><div class="spacing-box" style="width:24px;height:32px;"><span class="spacing-label">12</span></div><div class="spacing-value">12px</div></div>
+      <div><div class="spacing-box" style="width:32px;height:32px;"><span class="spacing-label">16</span></div><div class="spacing-value">16px</div></div>
+      <div><div class="spacing-box" style="width:48px;height:32px;"><span class="spacing-label">24</span></div><div class="spacing-value">24px</div></div>
+      <div><div class="spacing-box" style="width:64px;height:32px;"><span class="spacing-label">32</span></div><div class="spacing-value">32px</div></div>
+      <div><div class="spacing-box" style="width:80px;height:32px;"><span class="spacing-label">40</span></div><div class="spacing-value">40px</div></div>
+      <div><div class="spacing-box" style="width:96px;height:32px;"><span class="spacing-label">48</span></div><div class="spacing-value">48px</div></div>
+      <div><div class="spacing-box" style="width:128px;height:32px;"><span class="spacing-label">64</span></div><div class="spacing-value">64px</div></div>
+      <div><div class="spacing-box" style="width:160px;height:32px;"><span class="spacing-label">80</span></div><div class="spacing-value">80px</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. BORDER RADIUS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Border Radius Scale</h2>
+    <p class="section-subtitle">From sharp inputs to fully rounded pills.</p>
+
+    <div class="radius-row">
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:8px;"></div>
+        <div class="radius-label">8px</div>
+        <div class="radius-context">Inputs, small UI</div>
+      </div>
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:20px;"></div>
+        <div class="radius-label">20px</div>
+        <div class="radius-context">Cards</div>
+      </div>
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:24px;"></div>
+        <div class="radius-label">24px</div>
+        <div class="radius-context">Feature cards</div>
+      </div>
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:100px; width: 160px;"></div>
+        <div class="radius-label">100px</div>
+        <div class="radius-context">Pill buttons, badges</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ELEVATION -->
+<section class="section section-alt" id="elevation">
+  <div class="container">
+    <h2 class="section-title">Elevation & Depth</h2>
+    <p class="section-subtitle">Primarily flat with soft dual-shadow when elevated.</p>
+
+    <div class="elevation-grid">
+      <div class="elevation-card elev-flat">
+        <h4>Flat</h4>
+        <p>No shadow. Background differentiation only. Default state for cards and sections.</p>
+      </div>
+      <div class="elevation-card elev-1">
+        <h4>Level 1</h4>
+        <p>0 2px 4px rgba(0,0,0,0.1). Subtle lift for interactive cards on hover.</p>
+      </div>
+      <div class="elevation-card elev-2">
+        <h4>Level 2</h4>
+        <p>Dual shadow: 12px/28px ambient + 2px/4px direct. Elevated cards, dropdowns.</p>
+      </div>
+      <div class="elevation-card elev-overlay">
+        <h4>Overlay</h4>
+        <p>rgba(0,0,0,0.6) full-screen backdrop for modals and lightboxes.</p>
+      </div>
+      <div class="elevation-card elev-inset">
+        <h4>Inset</h4>
+        <p>rgba(255,255,255,0.5) inset glow. Used on frosted glass-effect surfaces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">Maintained by <a href="https://github.com/VoltAgent/voltagent" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><img src="https://github.com/VoltAgent.png?size=32" alt="VoltAgent" width="14" height="14" style="border-radius:3px;vertical-align:-2px;margin-right:3px;">VoltAgent</a> team</footer>
+
+</body>
+</html>

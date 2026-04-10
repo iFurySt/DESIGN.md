@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Inspired by Nike</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nike-black: #111111;
+    --nike-white: #FFFFFF;
+    --snow: #FAFAFA;
+    --light-gray: #F5F5F5;
+    --hover-gray: #E5E5E5;
+    --border-secondary: #CACACB;
+    --secondary-text: #707072;
+    --disabled-text: #9E9EA0;
+    --dark-surface: #28282A;
+    --deep-charcoal: #1F1F21;
+    --dark-hover: #39393B;
+    --disabled-inverse: #4B4B4D;
+    --nike-red: #D30005;
+    --success-green: #007D48;
+    --success-inverse: #1EAA52;
+    --link-blue: #1151FF;
+    --info-inverse: #1190FF;
+    --warning-yellow: #FEDF35;
+    --orange-flash: #FF5000;
+    --focus-ring: rgba(39, 93, 197, 1);
+
+    /* Dark mode overrides */
+    --page-bg: #111111;
+    --card-bg: #1F1F21;
+    --card-border: #28282A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #9E9EA0;
+    --text-disabled: #4B4B4D;
+    --divider: #28282A;
+    --input-bg: #28282A;
+    --input-border: #39393B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    line-height: 1.75;
+    font-weight: 400;
+  }
+
+  /* Nav */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--nike-black);
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 60px;
+  }
+  .nav-brand {
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--nike-white);
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--nike-white);
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--text-secondary); }
+  .nav-cta {
+    background: var(--nike-white);
+    color: var(--nike-black);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+  .nav-cta:hover { background: var(--border-secondary); }
+
+  /* Hero */
+  .hero {
+    background: var(--deep-charcoal);
+    color: var(--nike-white);
+    padding: 80px 48px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #1F1F21 0%, #28282A 50%, #1F1F21 100%);
+    opacity: 0.95;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; }
+  .hero h1 {
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.90;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.75;
+  }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--nike-white);
+    color: var(--nike-black);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    transition: background 200ms ease;
+  }
+  .btn-primary:hover { background: var(--border-secondary); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--nike-white);
+    border: 1.5px solid var(--secondary-text);
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    transition: border-color 200ms ease;
+  }
+  .btn-secondary:hover { border-color: var(--nike-white); }
+
+  /* Sections */
+  .section {
+    padding: 64px 48px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--divider);
+  }
+
+  /* Color Palette */
+  .color-category { margin-bottom: 40px; }
+  .color-category h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .color-swatch {
+    overflow: hidden;
+  }
+  .swatch-block {
+    height: 80px;
+    width: 100%;
+    border-radius: 4px;
+  }
+  .swatch-info {
+    padding: 10px 0;
+  }
+  .swatch-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .swatch-hex {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-family: 'Inter', monospace;
+  }
+  .swatch-role {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  /* Typography */
+  .type-sample { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--divider); }
+  .type-sample:last-child { border-bottom: none; }
+  .type-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .type-display {
+    font-family: 'Oswald', Helvetica, Arial, sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.90;
+    color: var(--text-primary);
+  }
+  .type-h1 {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .type-h2 {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .type-h3 {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .type-body {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+  .type-link {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.75;
+    text-decoration: underline;
+    color: var(--info-inverse);
+  }
+  .type-button-text {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .type-caption {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+  .type-small {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  /* Buttons Section */
+  .button-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .button-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .btn-dark-on-dark {
+    background: var(--nike-white);
+    color: var(--nike-black);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    transition: background 200ms ease;
+  }
+  .btn-dark-on-dark:hover { background: var(--border-secondary); }
+  .btn-outlined-dark {
+    background: transparent;
+    color: var(--nike-white);
+    border: 1.5px solid var(--secondary-text);
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    transition: border-color 200ms ease;
+  }
+  .btn-outlined-dark:hover { border-color: var(--nike-white); }
+  .btn-disabled {
+    background: var(--dark-surface);
+    color: var(--disabled-inverse);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: not-allowed;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+  .btn-icon {
+    background: var(--dark-surface);
+    color: var(--nike-white);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 200ms ease;
+  }
+  .btn-icon:hover { background: var(--dark-hover); }
+  .light-btn-row {
+    background: var(--nike-white);
+    padding: 24px 32px;
+    border-radius: 12px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-dark-light {
+    background: var(--nike-black);
+    color: var(--nike-white);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    transition: background 200ms ease;
+  }
+  .btn-dark-light:hover { background: var(--secondary-text); }
+  .btn-outlined-light {
+    background: transparent;
+    color: var(--nike-black);
+    border: 1.5px solid var(--border-secondary);
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    transition: border-color 200ms ease;
+  }
+  .btn-outlined-light:hover { border-color: var(--secondary-text); }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .card {
+    overflow: hidden;
+  }
+  .card-image {
+    width: 100%;
+    height: 240px;
+    background: var(--dark-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .card-body {
+    padding: 12px 0;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .card-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .card-price {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-top: 4px;
+  }
+  .card-container {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    padding: 24px;
+  }
+  .card-container h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+  .card-container p {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .category-card {
+    position: relative;
+    height: 280px;
+    background: var(--dark-surface);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+  .category-card-text {
+    color: var(--nike-white);
+    font-size: 24px;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  /* Forms */
+  .form-group { margin-bottom: 24px; max-width: 480px; }
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 200ms ease;
+  }
+  .form-input::placeholder { color: var(--text-secondary); }
+  .form-input:focus { border-color: var(--nike-white); box-shadow: 0 0 0 2px var(--focus-ring); }
+  .form-input-error {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    border: 1.5px solid var(--nike-red);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+  }
+  .form-error-text {
+    font-size: 12px;
+    color: var(--nike-red);
+    margin-top: 4px;
+  }
+  .form-search {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    font-size: 16px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 24px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 200ms ease;
+  }
+  .form-search::placeholder { color: var(--text-secondary); }
+  .form-search:focus { box-shadow: 0 0 0 2px var(--focus-ring); }
+  .form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 200ms ease;
+  }
+  .form-textarea::placeholder { color: var(--text-secondary); }
+  .form-textarea:focus { border-color: var(--nike-white); box-shadow: 0 0 0 2px var(--focus-ring); }
+
+  /* Spacing */
+  .spacing-row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 16px; }
+  .spacing-box {
+    background: var(--nike-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--nike-black);
+    border-radius: 4px;
+    min-height: 40px;
+  }
+
+  /* Radius */
+  .radius-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-end; }
+  .radius-item { text-align: center; }
+  .radius-box {
+    width: 80px;
+    height: 80px;
+    background: var(--nike-white);
+    margin-bottom: 8px;
+  }
+  .radius-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .radius-context {
+    font-size: 11px;
+    color: var(--text-disabled);
+  }
+
+  /* Elevation */
+  .elevation-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .elevation-card {
+    padding: 24px;
+    text-align: center;
+  }
+  .elevation-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+  }
+  .elevation-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .elevation-flat {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+  }
+  .elevation-divider {
+    background: var(--card-bg);
+    box-shadow: 0px -1px 0px 0px #28282A inset;
+    border: 1px solid var(--card-border);
+  }
+  .elevation-focus {
+    background: var(--card-bg);
+    box-shadow: 0 0 0 2px rgba(39, 93, 197, 1);
+  }
+  .elevation-overlay {
+    background: var(--dark-surface);
+    color: var(--nike-white);
+    border: 1px solid var(--dark-hover);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 48px;
+    border-top: 1px solid var(--divider);
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .footer a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .footer a:hover { color: var(--text-secondary); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav { padding: 0 16px; }
+    .nav-links { display: none; }
+    .hero { padding: 48px 16px 40px; }
+    .hero h1 { font-size: 48px; }
+    .section { padding: 40px 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .elevation-grid { grid-template-columns: repeat(2, 1fr); }
+    .color-grid { grid-template-columns: repeat(2, 1fr); }
+    .type-display { font-size: 48px; }
+    
+  }
+
+  /* getdesign.md nav additions */
+  .nav-left { display: flex; align-items: center; gap: 20px; }
+  .nav-brand-link,
+  .nav-brand-link:link,
+  .nav-brand-link:visited,
+  .nav-brand-link:hover,
+  .nav-brand-link:active { text-decoration: none; color: inherit; }
+  .nav-github,
+  .nav-github:link,
+  .nav-github:visited,
+  .nav-github:hover,
+  .nav-github:active {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 6px;
+    opacity: 0.75;
+    transition: opacity 200ms ease, border-color 200ms ease;
+    font-family: inherit;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .nav-github:hover { opacity: 1; border-color: rgba(128, 128, 128, 0.55); }
+  .nav-github svg { display: block; flex-shrink: 0; }
+
+  /* getdesign.md nav centering */
+  .nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .nav > .nav-left { justify-self: start; }
+  .nav > .nav-links { justify-self: center; }
+  .nav > :last-child { justify-self: end; }
+</style>
+</head>
+<body>
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-left">
+    <a href="https://getdesign.md/" target="_blank" rel="noopener noreferrer" class="nav-brand-link">
+      <span class="nav-brand">getdesign.md</span>
+    </a>
+    <a class="nav-github" href="https://github.com/VoltAgent/awesome-design-md" target="_blank" rel="noopener noreferrer" aria-label="awesome-design-md on GitHub">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      awesome-design-md
+    </a>
+  </div>
+  <ul class="nav-links">
+    <a href="#colors">Colors</a>
+    <a href="#typography">Typography</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#cards">Cards</a>
+    <a href="#forms">Forms</a>
+    <a href="#spacing">Spacing</a>
+  </ul>
+  <button class="nav-cta">Just Do It</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Design System Inspired by Nike</h1>
+    <p class="hero-subtitle">A complete design token catalog extracted from Nike.com — Podium CDS typography, color palette, and component patterns.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Explore Tokens</button>
+      <button class="btn-secondary">View Source</button>
+    </div>
+  </div>
+</section>
+
+<!-- Colors -->
+<section class="section" id="colors">
+  <h2 class="section-title">Color Palette</h2>
+  <p class="section-desc">Nike's monochromatic foundation — the UI disappears into black, white, and grey so product photography provides all color.</p>
+
+  <div class="color-category">
+    <h3>Primary</h3>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#111111; border:1px solid #28282A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Nike Black</div>
+          <div class="swatch-hex">#111111</div>
+          <div class="swatch-role">Primary text, buttons, nav</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FFFFFF;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Nike White</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-role">Page canvas, button text</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-category">
+    <h3>Surface & Background</h3>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FAFAFA;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Snow</div>
+          <div class="swatch-hex">#FAFAFA</div>
+          <div class="swatch-role">Grey-50, lightest surface</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#F5F5F5;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Gray</div>
+          <div class="swatch-hex">#F5F5F5</div>
+          <div class="swatch-role">Grey-100, input bg, placeholders</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#E5E5E5;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Hover Gray</div>
+          <div class="swatch-hex">#E5E5E5</div>
+          <div class="swatch-role">Grey-200, hover states</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#28282A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Surface</div>
+          <div class="swatch-hex">#28282A</div>
+          <div class="swatch-role">Grey-800, dark sections</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#1F1F21; border:1px solid #28282A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Charcoal</div>
+          <div class="swatch-hex">#1F1F21</div>
+          <div class="swatch-role">Grey-900, inverse primary bg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-category">
+    <h3>Neutrals & Text</h3>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#111111; border:1px solid #28282A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary Text</div>
+          <div class="swatch-hex">#111111</div>
+          <div class="swatch-role">Headings, body, nav</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#707072;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Secondary Text</div>
+          <div class="swatch-hex">#707072</div>
+          <div class="swatch-role">Descriptions, metadata</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#9E9EA0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Disabled Text</div>
+          <div class="swatch-hex">#9E9EA0</div>
+          <div class="swatch-role">Inactive elements</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#CACACB;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Border Secondary</div>
+          <div class="swatch-hex">#CACACB</div>
+          <div class="swatch-role">Input borders, dividers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-category">
+    <h3>Semantic & Accent</h3>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#D30005;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Nike Red</div>
+          <div class="swatch-hex">#D30005</div>
+          <div class="swatch-role">Critical, errors, sale</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FF5000;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Orange Flash</div>
+          <div class="swatch-hex">#FF5000</div>
+          <div class="swatch-role">Promotional accent</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#1EAA52;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Success Inverse</div>
+          <div class="swatch-hex">#1EAA52</div>
+          <div class="swatch-role">Success on dark</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#1190FF;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Info Inverse</div>
+          <div class="swatch-hex">#1190FF</div>
+          <div class="swatch-role">Links on dark</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background:#FEDF35;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warning Yellow</div>
+          <div class="swatch-hex">#FEDF35</div>
+          <div class="swatch-role">Warning banners</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-category">
+    <h3>Extended Spectrum (50 → 900)</h3>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #FFE5E5, #EE0005, #530300); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Red Ramp</div>
+          <div class="swatch-hex">#FFE5E5 → #530300</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #FFE2D6, #FF5000, #3E1009); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Orange Ramp</div>
+          <div class="swatch-hex">#FFE2D6 → #3E1009</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #FEF087, #FCA600, #99470A); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Yellow Ramp</div>
+          <div class="swatch-hex">#FEF087 → #99470A</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #DFFFB9, #1EAA52, #003C2A); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Green Ramp</div>
+          <div class="swatch-hex">#DFFFB9 → #003C2A</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #D4FFFB, #008E98, #043441); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal Ramp</div>
+          <div class="swatch-hex">#D4FFFB → #043441</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #D6EEFF, #1151FF, #020664); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Blue Ramp</div>
+          <div class="swatch-hex">#D6EEFF → #020664</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #E4E1FC, #6E0FF6, #1C0060); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Purple Ramp</div>
+          <div class="swatch-hex">#E4E1FC → #1C0060</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: linear-gradient(90deg, #FFE1F3, #ED1AA0, #4C012D); border-radius:4px;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Pink Ramp</div>
+          <div class="swatch-hex">#FFE1F3 → #4C012D</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Typography -->
+<section class="section" id="typography">
+  <h2 class="section-title">Typography Scale</h2>
+  <p class="section-desc">Nike Futura ND for display impact, Helvetica Now for precision body text. Oswald and Inter serve as web substitutes.</p>
+
+  <div class="type-sample">
+    <div class="type-label">Display — 96px / 500 / 0.90 / Uppercase</div>
+    <div class="type-display">JUST DO IT</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Heading 1 — 32px / 600 / 1.20</div>
+    <div class="type-h1">Section Title Heading</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Heading 2 — 24px / 600 / 1.20</div>
+    <div class="type-h2">Subsection Heading</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Heading 3 — 16px / 500 / 1.50</div>
+    <div class="type-h3">Card Title</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Body — 16px / 400 / 1.75</div>
+    <div class="type-body">The quick brown fox jumps over the lazy dog. Nike's body text uses Helvetica Now Text at weight 400 with generous 1.75 line-height for comfortable product browsing.</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Link — 16px / 500 / 1.75</div>
+    <div class="type-link">Shop All Running Shoes</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Button — 16px / 500 / 1.50</div>
+    <div class="type-button-text">Add to Cart</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Caption — 14px / 500 / 1.50</div>
+    <div class="type-caption">$129.99 — Available in 8 colors</div>
+  </div>
+  <div class="type-sample">
+    <div class="type-label">Small — 12px / 500 / 1.50</div>
+    <div class="type-small">Free shipping on orders over $50</div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Buttons -->
+<section class="section" id="buttons">
+  <h2 class="section-title">Button Variants</h2>
+  <p class="section-desc">Pill-shaped (30px radius) buttons with aggressive simplicity — only primary, secondary, and disabled states.</p>
+
+  <div class="button-label">On Dark Background</div>
+  <div class="button-row">
+    <button class="btn-dark-on-dark">Primary</button>
+    <button class="btn-outlined-dark">Secondary</button>
+    <button class="btn-disabled" disabled>Disabled</button>
+    <button class="btn-icon">+</button>
+  </div>
+
+  <div class="button-label" style="margin-top:32px;">On Light Background</div>
+  <div class="light-btn-row">
+    <button class="btn-dark-light">Primary</button>
+    <button class="btn-outlined-light">Secondary</button>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Cards -->
+<section class="section" id="cards">
+  <h2 class="section-title">Cards & Containers</h2>
+  <p class="section-desc">Shadow-free, border-minimal cards — product images fill edge-to-edge with no radius. UI containers use 20px radius.</p>
+
+  <div style="margin-bottom:40px;">
+    <div class="button-label">Product Cards (no radius, no shadow)</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-image">Product Image</div>
+        <div class="card-body">
+          <div class="card-title">Nike Air Max 90</div>
+          <div class="card-subtitle">Men's Shoes</div>
+          <div class="card-price">$130</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">Product Image</div>
+        <div class="card-body">
+          <div class="card-title">Nike Dunk Low Retro</div>
+          <div class="card-subtitle">Men's Shoes</div>
+          <div class="card-price">$115</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">Product Image</div>
+        <div class="card-body">
+          <div class="card-title">Nike Pegasus 41</div>
+          <div class="card-subtitle">Women's Road Running</div>
+          <div class="card-price">$140</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:40px;">
+    <div class="button-label">Category Cards (full-bleed, text overlay)</div>
+    <div class="card-grid">
+      <div class="category-card" style="background:#39393B;">
+        <span class="category-card-text">Running</span>
+      </div>
+      <div class="category-card" style="background:#28282A;">
+        <span class="category-card-text">Basketball</span>
+      </div>
+      <div class="category-card" style="background:#1F1F21; border:1px solid #28282A;">
+        <span class="category-card-text">Training</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="button-label">UI Containers (20px radius, subtle border)</div>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+      <div class="card-container">
+        <h4>Shipping Info</h4>
+        <p>Free standard shipping on orders $50+. Members get free shipping on all orders.</p>
+      </div>
+      <div class="card-container">
+        <h4>Size Guide</h4>
+        <p>Not sure of your size? Use our fit guide to find the perfect match.</p>
+      </div>
+      <div class="card-container">
+        <h4>Returns</h4>
+        <p>Free returns within 60 days of purchase. Nike Members get extended returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Forms -->
+<section class="section" id="forms">
+  <h2 class="section-title">Form Elements</h2>
+  <p class="section-desc">Inputs use dark surface fill with subtle borders. 8px radius for forms, 24px for search.</p>
+
+  <div class="form-group">
+    <label class="form-label">Search Input (24px radius)</label>
+    <input type="text" class="form-search" placeholder="Search">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Default Input</label>
+    <input type="text" class="form-input" placeholder="Enter your email">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Focus State</label>
+    <input type="text" class="form-input" value="john@example.com" style="border-color:#FFFFFF; box-shadow: 0 0 0 2px rgba(39, 93, 197, 1);">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Error State</label>
+    <input type="text" class="form-input-error" value="invalid-email">
+    <div class="form-error-text">Please enter a valid email address</div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Textarea</label>
+    <textarea class="form-textarea" placeholder="Tell us about your experience"></textarea>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Spacing -->
+<section class="section" id="spacing">
+  <h2 class="section-title">Spacing Scale</h2>
+  <p class="section-desc">4px base unit, scaling through 8px multiples for athletic grid precision.</p>
+
+  <div class="spacing-row">
+    <div class="spacing-box" style="width:16px; height:40px;"><span style="font-size:10px;">4</span></div>
+    <div class="spacing-box" style="width:32px; height:40px;">8</div>
+    <div class="spacing-box" style="width:48px; height:40px;">12</div>
+    <div class="spacing-box" style="width:64px; height:40px;">16</div>
+    <div class="spacing-box" style="width:80px; height:40px;">20</div>
+    <div class="spacing-box" style="width:96px; height:40px;">24</div>
+    <div class="spacing-box" style="width:128px; height:40px;">32</div>
+    <div class="spacing-box" style="width:192px; height:40px;">48</div>
+    <div class="spacing-box" style="width:256px; height:40px;">64</div>
+    <div class="spacing-box" style="width:320px; height:40px;">80</div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Border Radius -->
+<section class="section">
+  <h2 class="section-title">Border Radius Scale</h2>
+  <p class="section-desc">From sharp-edge photography to fully rounded pill buttons — radius communicates element type.</p>
+
+  <div class="radius-row">
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:0px;"></div>
+      <div class="radius-label">0px</div>
+      <div class="radius-context">Images</div>
+    </div>
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:8px;"></div>
+      <div class="radius-label">8px</div>
+      <div class="radius-context">Inputs</div>
+    </div>
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:18px;"></div>
+      <div class="radius-label">18px</div>
+      <div class="radius-context">Small elements</div>
+    </div>
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:20px;"></div>
+      <div class="radius-label">20px</div>
+      <div class="radius-context">Containers</div>
+    </div>
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:24px;"></div>
+      <div class="radius-label">24px</div>
+      <div class="radius-context">Search, pills</div>
+    </div>
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:30px;"></div>
+      <div class="radius-label">30px</div>
+      <div class="radius-context">Buttons</div>
+    </div>
+    <div class="radius-item">
+      <div class="radius-box" style="border-radius:50%;"></div>
+      <div class="radius-label">50%</div>
+      <div class="radius-context">Circles</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- Elevation -->
+<section class="section">
+  <h2 class="section-title">Depth & Elevation</h2>
+  <p class="section-desc">Radically flat — no card shadows, no hover lifts. Depth through color shifts only.</p>
+
+  <div class="elevation-grid">
+    <div class="elevation-card elevation-flat">
+      <div class="elevation-name">Flat</div>
+      <div class="elevation-desc">No shadow — default for everything</div>
+    </div>
+    <div class="elevation-card elevation-divider">
+      <div class="elevation-name">Divider</div>
+      <div class="elevation-desc">1px inset line between sections</div>
+    </div>
+    <div class="elevation-card elevation-focus">
+      <div class="elevation-name">Focus</div>
+      <div class="elevation-desc">2px keyboard focus ring</div>
+    </div>
+    <div class="elevation-card elevation-overlay">
+      <div class="elevation-name">Overlay</div>
+      <div class="elevation-desc">Dark scrim over photography</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">Maintained by <a href="https://github.com/VoltAgent/voltagent" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><img src="https://github.com/VoltAgent.png?size=32" alt="VoltAgent" width="14" height="14" style="border-radius:3px;vertical-align:-2px;margin-right:3px;">VoltAgent</a> team</footer>
+
+</body>
+</html>
