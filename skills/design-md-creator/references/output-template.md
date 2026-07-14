@@ -39,10 +39,13 @@ Document background, text, border, radius, padding, hover/focus/active states wh
 
 ## 5. Layout Principles
 
+### Page Composition
 ### Spacing System
 ### Grid & Container
 ### Section Rhythm
 ### Border Radius Scale
+
+For Page Composition, record the shared layout rules and the implementation target: either the reference page shell or the page described by the user. Include section order, content hierarchy, major alignment patterns, and recurring structures needed to build the requested result.
 
 ## 6. Depth & Elevation
 
@@ -69,6 +72,7 @@ Document background, text, border, radius, padding, hover/focus/active states wh
 - Primary colors:
 - Key type rules:
 - Core component rules:
+- Page structure:
 - Short prompt:
 ```
 
