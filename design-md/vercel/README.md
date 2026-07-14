@@ -1,3 +1,3 @@
 # Vercel Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/vercel/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/vercel/design-md

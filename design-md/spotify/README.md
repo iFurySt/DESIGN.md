@@ -1,3 +1,3 @@
 # Spotify Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/spotify/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/spotify/design-md

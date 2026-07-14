@@ -1,3 +1,3 @@
 # Semrush Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/semrush/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/semrush/design-md

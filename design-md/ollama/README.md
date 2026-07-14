@@ -1,3 +1,3 @@
 # Ollama Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/ollama/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/ollama/design-md

@@ -44,7 +44,7 @@
 - `preview.html`
 - `preview-dark.html`
 
-这个 fork 由 [iFurySt](https://github.com/iFurySt/DESIGN.md) 维护。上游公开设计页仍可参考 [getdesign.md](https://getdesign.md/)。
+这个 fork 由 [iFurySt](https://github.com/iFurySt/DESIGN.md) 维护。公开设计页可访问 [ifuryst.com/DESIGN.md/](https://www.ifuryst.com/DESIGN.md/)。
 
 ## 如何新增新的 DESIGN.md
 
@@ -79,92 +79,92 @@ npx skills update design-md-creator -g -y
 
 ### AI & LLM Platforms
 
-- [**Claude**](https://getdesign.md/claude/design-md) - Anthropic 的 AI 助手。暖陶土色点缀，干净的编辑风布局
-- [**Cohere**](https://getdesign.md/cohere/design-md) - 企业级 AI 平台。高饱和渐变、数据仪表盘风格
-- [**ElevenLabs**](https://getdesign.md/elevenlabs/design-md) - AI 语音平台。偏电影感的深色界面
-- [**Minimax**](https://getdesign.md/minimax/design-md) - 模型平台。深色界面配霓虹强调色
-- [**Mistral AI**](https://getdesign.md/mistral.ai/design-md) - 开源权重模型平台。极简、偏紫调
-- [**Ollama**](https://getdesign.md/ollama/design-md) - 本地运行 LLM。终端感、黑白极简
-- [**OpenCode AI**](https://getdesign.md/opencode.ai/design-md) - AI 编码平台。面向开发者的深色界面
-- [**Replicate**](https://getdesign.md/replicate/design-md) - 模型 API 平台。白底、代码感强
-- [**RunwayML**](https://getdesign.md/runwayml/design-md) - AI 视频生成。媒体化、电影感深色风格
-- [**Together AI**](https://getdesign.md/together.ai/design-md) - 开源 AI 基础设施。蓝图式技术感
-- [**VoltAgent**](https://getdesign.md/voltagent/design-md) - AI Agent 框架。纯黑画布、绿色强调、终端气质
-- [**xAI**](https://getdesign.md/x.ai/design-md) - xAI。黑白极简、未来感
+- [**Claude**](https://www.ifuryst.com/DESIGN.md/claude/design-md) - Anthropic 的 AI 助手。暖陶土色点缀，干净的编辑风布局
+- [**Cohere**](https://www.ifuryst.com/DESIGN.md/cohere/design-md) - 企业级 AI 平台。高饱和渐变、数据仪表盘风格
+- [**ElevenLabs**](https://www.ifuryst.com/DESIGN.md/elevenlabs/design-md) - AI 语音平台。偏电影感的深色界面
+- [**Minimax**](https://www.ifuryst.com/DESIGN.md/minimax/design-md) - 模型平台。深色界面配霓虹强调色
+- [**Mistral AI**](https://www.ifuryst.com/DESIGN.md/mistral.ai/design-md) - 开源权重模型平台。极简、偏紫调
+- [**Ollama**](https://www.ifuryst.com/DESIGN.md/ollama/design-md) - 本地运行 LLM。终端感、黑白极简
+- [**OpenCode AI**](https://www.ifuryst.com/DESIGN.md/opencode.ai/design-md) - AI 编码平台。面向开发者的深色界面
+- [**Replicate**](https://www.ifuryst.com/DESIGN.md/replicate/design-md) - 模型 API 平台。白底、代码感强
+- [**RunwayML**](https://www.ifuryst.com/DESIGN.md/runwayml/design-md) - AI 视频生成。媒体化、电影感深色风格
+- [**Together AI**](https://www.ifuryst.com/DESIGN.md/together.ai/design-md) - 开源 AI 基础设施。蓝图式技术感
+- [**VoltAgent**](https://www.ifuryst.com/DESIGN.md/voltagent/design-md) - AI Agent 框架。纯黑画布、绿色强调、终端气质
+- [**xAI**](https://www.ifuryst.com/DESIGN.md/x.ai/design-md) - xAI。黑白极简、未来感
 
 ### Developer Tools & IDEs
 
-- [**Cursor**](https://getdesign.md/cursor/design-md) - AI 优先代码编辑器
-- [**Expo**](https://getdesign.md/expo/design-md) - React Native 平台
-- [**Lovable**](https://getdesign.md/lovable/design-md) - AI 全栈构建工具
-- [**Raycast**](https://getdesign.md/raycast/design-md) - 效率启动器
-- [**Superhuman**](https://getdesign.md/superhuman/design-md) - 邮件客户端
-- [**Vercel**](https://getdesign.md/vercel/design-md) - 前端部署平台
-- [**Warp**](https://getdesign.md/warp/design-md) - 现代终端
+- [**Cursor**](https://www.ifuryst.com/DESIGN.md/cursor/design-md) - AI 优先代码编辑器
+- [**Expo**](https://www.ifuryst.com/DESIGN.md/expo/design-md) - React Native 平台
+- [**Lovable**](https://www.ifuryst.com/DESIGN.md/lovable/design-md) - AI 全栈构建工具
+- [**Raycast**](https://www.ifuryst.com/DESIGN.md/raycast/design-md) - 效率启动器
+- [**Superhuman**](https://www.ifuryst.com/DESIGN.md/superhuman/design-md) - 邮件客户端
+- [**Vercel**](https://www.ifuryst.com/DESIGN.md/vercel/design-md) - 前端部署平台
+- [**Warp**](https://www.ifuryst.com/DESIGN.md/warp/design-md) - 现代终端
 
 ### Backend, Database & DevOps
 
-- [**ClickHouse**](https://getdesign.md/clickhouse/design-md)
-- [**Composio**](https://getdesign.md/composio/design-md)
-- [**HashiCorp**](https://getdesign.md/hashicorp/design-md)
-- [**MongoDB**](https://getdesign.md/mongodb/design-md)
-- [**PostHog**](https://getdesign.md/posthog/design-md)
-- [**Sanity**](https://getdesign.md/sanity/design-md)
-- [**Sentry**](https://getdesign.md/sentry/design-md)
-- [**Supabase**](https://getdesign.md/supabase/design-md)
+- [**ClickHouse**](https://www.ifuryst.com/DESIGN.md/clickhouse/design-md)
+- [**Composio**](https://www.ifuryst.com/DESIGN.md/composio/design-md)
+- [**HashiCorp**](https://www.ifuryst.com/DESIGN.md/hashicorp/design-md)
+- [**MongoDB**](https://www.ifuryst.com/DESIGN.md/mongodb/design-md)
+- [**PostHog**](https://www.ifuryst.com/DESIGN.md/posthog/design-md)
+- [**Sanity**](https://www.ifuryst.com/DESIGN.md/sanity/design-md)
+- [**Sentry**](https://www.ifuryst.com/DESIGN.md/sentry/design-md)
+- [**Supabase**](https://www.ifuryst.com/DESIGN.md/supabase/design-md)
 
 ### Productivity & SaaS
 
-- [**Cal.com**](https://getdesign.md/cal/design-md)
-- [**Intercom**](https://getdesign.md/intercom/design-md)
-- [**Linear**](https://getdesign.md/linear.app/design-md)
-- [**Mintlify**](https://getdesign.md/mintlify/design-md)
-- [**Notion**](https://getdesign.md/notion/design-md)
-- [**Resend**](https://getdesign.md/resend/design-md)
-- [**Zapier**](https://getdesign.md/zapier/design-md)
+- [**Cal.com**](https://www.ifuryst.com/DESIGN.md/cal/design-md)
+- [**Intercom**](https://www.ifuryst.com/DESIGN.md/intercom/design-md)
+- [**Linear**](https://www.ifuryst.com/DESIGN.md/linear.app/design-md)
+- [**Mintlify**](https://www.ifuryst.com/DESIGN.md/mintlify/design-md)
+- [**Notion**](https://www.ifuryst.com/DESIGN.md/notion/design-md)
+- [**Resend**](https://www.ifuryst.com/DESIGN.md/resend/design-md)
+- [**Zapier**](https://www.ifuryst.com/DESIGN.md/zapier/design-md)
 
 ### Design & Creative Tools
 
-- [**Airtable**](https://getdesign.md/airtable/design-md)
-- [**Clay**](https://getdesign.md/clay/design-md)
-- [**Figma**](https://getdesign.md/figma/design-md)
-- [**Framer**](https://getdesign.md/framer/design-md)
-- [**Miro**](https://getdesign.md/miro/design-md)
-- [**Webflow**](https://getdesign.md/webflow/design-md)
+- [**Airtable**](https://www.ifuryst.com/DESIGN.md/airtable/design-md)
+- [**Clay**](https://www.ifuryst.com/DESIGN.md/clay/design-md)
+- [**Figma**](https://www.ifuryst.com/DESIGN.md/figma/design-md)
+- [**Framer**](https://www.ifuryst.com/DESIGN.md/framer/design-md)
+- [**Miro**](https://www.ifuryst.com/DESIGN.md/miro/design-md)
+- [**Webflow**](https://www.ifuryst.com/DESIGN.md/webflow/design-md)
 
 ### Fintech & Crypto
 
-- [**Binance**](https://getdesign.md/binance/design-md)
-- [**Coinbase**](https://getdesign.md/coinbase/design-md)
-- [**Kraken**](https://getdesign.md/kraken/design-md)
-- [**Revolut**](https://getdesign.md/revolut/design-md)
-- [**Stripe**](https://getdesign.md/stripe/design-md)
-- [**Wise**](https://getdesign.md/wise/design-md)
+- [**Binance**](https://www.ifuryst.com/DESIGN.md/binance/design-md)
+- [**Coinbase**](https://www.ifuryst.com/DESIGN.md/coinbase/design-md)
+- [**Kraken**](https://www.ifuryst.com/DESIGN.md/kraken/design-md)
+- [**Revolut**](https://www.ifuryst.com/DESIGN.md/revolut/design-md)
+- [**Stripe**](https://www.ifuryst.com/DESIGN.md/stripe/design-md)
+- [**Wise**](https://www.ifuryst.com/DESIGN.md/wise/design-md)
 
 ### E-commerce & Retail
 
-- [**Airbnb**](https://getdesign.md/airbnb/design-md)
-- [**Meta**](https://getdesign.md/meta/design-md)
-- [**Nike**](https://getdesign.md/nike/design-md)
-- [**Shopify**](https://getdesign.md/shopify/design-md)
+- [**Airbnb**](https://www.ifuryst.com/DESIGN.md/airbnb/design-md)
+- [**Meta**](https://www.ifuryst.com/DESIGN.md/meta/design-md)
+- [**Nike**](https://www.ifuryst.com/DESIGN.md/nike/design-md)
+- [**Shopify**](https://www.ifuryst.com/DESIGN.md/shopify/design-md)
 
 ### Media & Consumer Tech
 
-- [**Apple**](https://getdesign.md/apple/design-md)
-- [**IBM**](https://getdesign.md/ibm/design-md)
-- [**NVIDIA**](https://getdesign.md/nvidia/design-md)
-- [**Pinterest**](https://getdesign.md/pinterest/design-md)
-- [**SpaceX**](https://getdesign.md/spacex/design-md)
-- [**Spotify**](https://getdesign.md/spotify/design-md)
-- [**Uber**](https://getdesign.md/uber/design-md)
+- [**Apple**](https://www.ifuryst.com/DESIGN.md/apple/design-md)
+- [**IBM**](https://www.ifuryst.com/DESIGN.md/ibm/design-md)
+- [**NVIDIA**](https://www.ifuryst.com/DESIGN.md/nvidia/design-md)
+- [**Pinterest**](https://www.ifuryst.com/DESIGN.md/pinterest/design-md)
+- [**SpaceX**](https://www.ifuryst.com/DESIGN.md/spacex/design-md)
+- [**Spotify**](https://www.ifuryst.com/DESIGN.md/spotify/design-md)
+- [**Uber**](https://www.ifuryst.com/DESIGN.md/uber/design-md)
 
 ### Automotive
 
-- [**BMW**](https://getdesign.md/bmw/design-md)
-- [**Ferrari**](https://getdesign.md/ferrari/design-md)
-- [**Lamborghini**](https://getdesign.md/lamborghini/design-md)
-- [**Renault**](https://getdesign.md/renault/design-md)
-- [**Tesla**](https://getdesign.md/tesla/design-md)
+- [**BMW**](https://www.ifuryst.com/DESIGN.md/bmw/design-md)
+- [**Ferrari**](https://www.ifuryst.com/DESIGN.md/ferrari/design-md)
+- [**Lamborghini**](https://www.ifuryst.com/DESIGN.md/lamborghini/design-md)
+- [**Renault**](https://www.ifuryst.com/DESIGN.md/renault/design-md)
+- [**Tesla**](https://www.ifuryst.com/DESIGN.md/tesla/design-md)
 
 ## 如何使用
 

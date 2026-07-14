@@ -1,3 +1,3 @@
 # Meta Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/meta/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/meta/design-md

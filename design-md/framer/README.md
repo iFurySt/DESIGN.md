@@ -1,3 +1,3 @@
 # Framer Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/framer/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/framer/design-md

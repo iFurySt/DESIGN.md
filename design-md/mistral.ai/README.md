@@ -1,3 +1,3 @@
 # Mistral AI Inspired Design System
 
-Design system details have been moved to: https://getdesign.md/mistral.ai/design-md
+Design system details have been moved to: https://www.ifuryst.com/DESIGN.md/mistral.ai/design-md
