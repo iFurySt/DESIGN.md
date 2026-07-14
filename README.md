@@ -54,6 +54,18 @@ Use the repo skill:
 Use $design-md-creator to analyze https://example.com and create a new DESIGN.md.
 ```
 
+Install the skill globally for Codex:
+
+```bash
+npx skills add iFurySt/DESIGN.md -g -a codex --skill design-md-creator -y
+```
+
+Update an existing global install:
+
+```bash
+npx skills update design-md-creator -g -y
+```
+
 The skill lives in [skills/design-md-creator/SKILL.md](/Users/ifuryst/projects/github/awesome-design-md/skills/design-md-creator/SKILL.md) and is designed to help AI agents turn a public website URL into:
 
 - `design-md/<slug>/DESIGN.md`

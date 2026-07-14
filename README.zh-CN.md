@@ -56,6 +56,18 @@
 Use $design-md-creator to analyze https://example.com and create a new DESIGN.md.
 ```
 
+全局安装到 Codex：
+
+```bash
+npx skills add iFurySt/DESIGN.md -g -a codex --skill design-md-creator -y
+```
+
+更新已有的全局安装：
+
+```bash
+npx skills update design-md-creator -g -y
+```
+
 这个 skill 位于 [skills/design-md-creator/SKILL.md](/Users/ifuryst/projects/github/awesome-design-md/skills/design-md-creator/SKILL.md)，目标是帮助 AI Agent 根据一个公开网站 URL 生成：
 
 - `design-md/<slug>/DESIGN.md`
