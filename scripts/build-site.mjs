@@ -360,7 +360,7 @@ function renderHeader(prefix) {
     <header class="site-header">
       <div class="site-header-inner">
         <div class="header-left">
-          <a class="brand-mark" href="${prefix}">ifuryst.com/<span>DESIGN.md</span>/</a>
+          <a class="brand-mark" href="${prefix}"><span>DESIGN</span>.md</a>
           <a class="button button-accent small-hide" href="${repoUrl}/pulls">Submit PR</a>
         </div>
         <nav class="header-nav">
@@ -378,7 +378,7 @@ function renderFooter(prefix) {
       <div class="site-footer-inner">
         <a class="footer-owner" href="${repoUrl}" target="_blank" rel="noreferrer">Maintained by iFurySt</a>
         <div class="footer-brand">
-          <span class="brand-mark small">ifuryst.com/<span>DESIGN.md</span>/</span>
+          <span class="brand-mark small"><span>DESIGN</span>.md</span>
           <span>${escapeHtml(siteTagline)}</span>
         </div>
         <div class="footer-links">

@@ -89,7 +89,6 @@ input {
   font-family: var(--font-pixel);
   font-size: clamp(18px, 1.8vw, 28px);
   letter-spacing: 0.14em;
-  text-transform: lowercase;
 }
 
 .brand-mark span {
